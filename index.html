@@ -8,35 +8,36 @@
 
   <body>
     <div class="container">
-      <div class="options-box">
+
+      <div>
+        <h1>Historical Places in Hyderabad.</h1>
+      </div>
+
+      <div id="mySidenav" class="sidenav" >
+
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
         <h1>Search your place to visit.</h1>
 
-        <div id="mySidenav" class="sidenav">
-          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-          <!-- <a href="#">About</a> -->
-        </div>
-        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
-        <div>
-          <input id="show-listings" type="button" value="Show Listings">
-          <input id="hide-listings" type="button" value="Hide Listings">
-        </div>
 
-        <hr>
-        <div>
-          <h3>OR</h3>
-          <p>Zoom your favorite location in hyderabad below.</p>
-          <input id="zoom-to-area-text" type="text" placeholder="Enter your favorite area!">
-          <input id="zoom-to-area" type="button" value="Zoom">
-        </div>
-
+        <p>Filter: <input data-bind="value: filter, valueUpdate: 'afterkeydown'" /></p>
+        <ul data-bind="foreach: locations">
+          <li data-bind="text: title"></li>
+        </ul>
 
       </div>
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+
+
 
       <div id="map"></div>
     </div>
 
+    <script src="js/libs/jQuery.js"></script>
+    <script src="js/libs/knockout.js"></script>
+    <script src="js/model.js"></script>
     <script src="js/app.js"></script>
-    <script src="js/knockout.js"></script>
+
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?libraries=geometry&key=AIzaSyDLVBC2tEnzXu_fprxgEMbvaas53Q01n9I&v=3&callback=initMap">
     </script>
