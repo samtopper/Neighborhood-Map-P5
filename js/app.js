@@ -29,7 +29,7 @@ function initMap() {
           data: 'limit=1&ll=' + item.location.lat + ',' + item.location.lng + '&query=' + item.title + '&client_id=' + fsquare_id + '&client_secret=' + fsquare_secret + '&v=20140806&m=foursquare'
       }).done(function(data){
           item.rating = data.response.groups[0].items[0].venue.rating;
-          console.log(data.response);
+          console.log(item.rating);
           if (!item.rating) {
               item.rating = 'No rating in foursquare';
           }
@@ -90,6 +90,7 @@ function populateInfoWindow(marker, infowindow) {
     if (infowindow.marker != marker) {
       infowindow.marker = marker;
       infowindow.setContent('<div>' + marker.title + '</div>');
+
       infowindow.open(map, marker);
       // clearing the marker property if the infowindow is closed.
       infowindow.addListener('closeclick', function() {
@@ -101,7 +102,7 @@ function populateInfoWindow(marker, infowindow) {
 // This function takes in a color, and then creates a new marker icon of that color.
   function makeMarkerIcon(markerColor) {
     var markerImage = new google.maps.MarkerImage(
-      'http://chart.googleapis.com/chart?chst=d_map_spin&chld=1.15|0|'+ markerColor +
+      'https://chart.googleapis.com/chart?chst=d_map_spin&chld=1.15|0|'+ markerColor +
       '|40|_|%E2%80%A2',
       new google.maps.Size(22, 35),  // 22 px wide by 35 px high.
       new google.maps.Point(0, 0),   // origin to (0,0)
