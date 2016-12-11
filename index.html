@@ -20,8 +20,8 @@
         <h1>Search your place to visit.</h1>
 
 
-        <p>Filter: <input data-bind="value: filter, valueUpdate: 'afterkeydown'" /></p>
-        <ul data-bind="foreach: locations">
+        <p>Filter: <input data-bind="value: firstMatch, valueUpdate: 'afterkeydown'" /></p>
+        <ul data-bind="foreach: placesArray">
           <li data-bind="text: title"></li>
         </ul>
 
