@@ -6,6 +6,5 @@ var locations = [
   {title: 'Nehru Zoological Park', location: { lat: 17.348305, lng: 78.442511 }},
   {title: 'Qutub Shahi Tombs', location: { lat: 17.394746, lng: 78.394717 }},
   {title: 'Ramoji Film City', location: { lat: 17.255826, lng: 78.682419 }},
-  {title: 'Hi Tech City', location: { lat: 17.446831, lng: 78.376585 }},
   {title: 'Falaknuma Palace', location: { lat: 17.330955, lng: 78.467504 }}
 ];

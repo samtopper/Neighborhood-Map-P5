@@ -119,3 +119,23 @@ function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
 }
 
+var ViewModel =function() {
+  var self = this;
+  var placesArray = ko.observableArray(locations);
+
+}
+
+//activates knockout.js
+ko.applyBindings(new ViewModel());
+
+//identify the first matching item by name
+ViewModel.firstMatch = ko.computed(function() {
+    var search = this.search().toLowerCase();
+    if (!search) {
+        return null;
+    } else {
+        return ko.utils.arrayFirst(this.filteredItems(), function(item) {
+            return ko.utils.stringStartsWith(item.name().toLowerCase(), search);
+        });
+    }
+}, ViewModel);
