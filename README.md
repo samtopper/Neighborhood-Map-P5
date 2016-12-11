@@ -8,8 +8,9 @@
 
 ## How to Use
 
-* After the webpage loads click 'show locations' button.
-* Click any marker on the map to show details & google streetview image.
+* After the webpage loads click 'Open'
+* Search for the locations from the available list.
+* Click any marker on the map to show details & rating from foursqare.
 * Browse other locations using the 'zoom' button around Hyderabad city.
 
 ## Running the app
